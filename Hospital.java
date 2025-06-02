@@ -1,3 +1,9 @@
+/**
+ * A hospital check-in desk before receiving treatment.
+ * @author Lily Ha
+ * @version 2.0.0
+ */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 public class Hospital {
@@ -12,6 +18,7 @@ public class Hospital {
             consent = input.nextLine();
         }
 
+        //The list of injuries the patient has.
         ArrayList<Injury> injuries = new ArrayList<>();
 
         System.out.println("Do you have a bruise?");
@@ -34,6 +41,7 @@ public class Hospital {
             System.out.println("And what color is the bruise as of right now?");
             String color = input.nextLine();
             Bruise one = new Bruise(location, color);
+            //Adds the bruise to the list of injuries.
             injuries.add(one);
             System.out.println("Got it, thanks.");
             System.out.println("Jotting down notes...");
@@ -86,6 +94,7 @@ public class Hospital {
                 haveMemoryLoss = false;
             }
             Concussion two = new Concussion(painLevel, haveMemoryLoss);
+            //Adds the concussion to the list of injuries.
             injuries.add(two);
             System.out.println("Got it, thanks.");
             System.out.println("Jotting down notes...");
@@ -121,6 +130,7 @@ public class Hospital {
             System.out.println("And what word would you use to describe your pain?");
             String painType = input.nextLine();
             Injury three = new Injury(name, painLevel1, location1, painType);
+            //Adds the injury described by the patient to the list of injuries.
             injuries.add(three);
             System.out.println("Is the following information correct?");
             System.out.println(three);
@@ -155,6 +165,7 @@ public class Hospital {
             wait = true;
         }
 
+        //Creates a file of a patient using the patient's name and their list of injuries.
         PatientFile VIPcustomer = new PatientFile(patientName, injuries);
 
         WaitingRoom lobby = new WaitingRoom();

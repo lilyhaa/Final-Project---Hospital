@@ -1,8 +1,17 @@
+/**
+ * The waiting room to receive treatment, it can give the patient a report on where they are in the queue.
+ * @author Lily Ha
+ * @version 2.0.0
+ */
 import java.util.ArrayList;
 public class WaitingRoom {
 
+    //The seats in the waiting room where the top left seat is first to receive treatment while the bottom right is last.
     private PatientFile[][] seats;
 
+    /**
+     * Creates a waiting room in the hospital.
+     */
     public WaitingRoom()
     {
         seats = new PatientFile[3][3];
@@ -19,6 +28,13 @@ public class WaitingRoom {
         }
     }
 
+    /**
+     * Returns a string representation of the patient's place in queue to receive treatment.
+     *
+     * @param VIP the file of the patient (their name and their list of injuries)
+     * @param wait whether the patient was willing to wait or not to receive treatment
+     * @return the string representation of the patient's place in queue
+     */
     public String getPlaceInQueue(PatientFile VIP, boolean wait)
     {
         String output = "";

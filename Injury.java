@@ -1,11 +1,23 @@
+/**
+ * Superclass
+ * @author Lily Ha
+ * @version 2.0.0
+ */
 public class Injury {
 
     private String name;
     private double painLevel;
     private String location;
-
     private String painType;
 
+    /**
+     * Creates a record of a patient's injury.
+     *
+     * @param name the name of the injury
+     * @param painLevel the level of pain the patient experiences from the injury
+     * @param location the location on the body the patient is experiencing pain
+     * @param painType the type of pain the patient is experiencing
+     */
     public Injury(String name, double painLevel, String location, String painType)
     {
         this.name = name;
@@ -14,46 +26,11 @@ public class Injury {
         this.painType = painType;
     }
 
-    public String getName()
-    {
-        return name;
-    }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public double getPainLevel()
-    {
-        return painLevel;
-    }
-
-    public void setPainLevel(int painLevel)
-    {
-        this.painLevel = painLevel;
-    }
-
-    public String getLocation()
-    {
-        return location;
-    }
-
-    public void setLocation(String location)
-    {
-        this.location = location;
-    }
-
-    public String getPainType()
-    {
-        return painType;
-    }
-
-
-    public void setPainType(String painType)
-    {
-        this.painType = painType;
-    }
+    /**
+     * Returns the string representation of the injury.
+     * @return the string representation
+     */
     public String toString()
     {
         return "Injury Report: " +  name + " at " + location + " with " + painType + " and " + painLevel + "/10 pain.";
